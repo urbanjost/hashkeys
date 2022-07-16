@@ -61,6 +61,7 @@ OPTIONS
 
 EXAMPLES
   Sample usage
+
      sha3 *
      sha3 --bits 512 *
 
