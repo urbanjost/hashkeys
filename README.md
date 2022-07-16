@@ -6,18 +6,34 @@ NOTE: This repository requires being built with fpm ( [Fortran Package Manager](
 ## NAME
 
 ### hashkeys - a collection of hash key generators using the M_hashkeys repository
+<!--
 ### Markdown IO
+NO
 + [digest](https://urbanjost.github.io/hashkeys/digest.md)
 + [hasher](https://urbanjost.github.io/hashkeys/hasher.md)
 + [sha3](https://urbanjost.github.io/hashkeys/sha3.md)
 ### Markdown site
+NO
 + [digest](https://github.com/urbanjost/docs/digest.md)
 + [hasher](https://github.com/urbanjost/docs/hasher.md)
 + [sha3](https://github.com/urbanjost/docs/sha3.md)
+### Markdown
+YES
++ [hasher]https://github.com/urbanjost/hashkeys/blob/main/docs/hasher.md)
++ [digest]https://github.com/urbanjost/hashkeys/blob/main/docs/digest.md)
++ [sha3]https://github.com/urbanjost/hashkeys/blob/main/docs/sha3.md)
+-->
+
+man-pages are incorporated in the distribution that have been rendered
+as HTML ...
+
 #### HTML
 + [digest](https://urbanjost.github.io/hashkeys/digest.1.html)
-+ [hasher](https://urbanjost.github.io/hashkeys/hasher.1.html)
+  compute SHA256 message digest (LICENSE:PD)
++ [hasher](https://urbanjost.github.io/hashkeys/hasher.1.html) 
+  exercise the string hash methods in the M_hashkey(3fm) module to generate file checksums 
 + [sha3](https://urbanjost.github.io/hashkeys/sha3.1.html)
+  generate SHA-{224, 256, 384, 512} digest values for specified files 
 
 ## INSTALLING
 
