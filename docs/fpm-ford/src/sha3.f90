@@ -13,6 +13,7 @@ character(len=:),allocatable :: help_text(:), version_text(:)
 
    call setup()
    call set_args(' --bits 256 --auto_test F',help_text,version_text)
+   ibitsz=iget('bits')
    if (lget('auto_test'))then
       call sha3_auto_test()
    endif
