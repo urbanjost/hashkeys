@@ -10,7 +10,7 @@
     <meta name="author" content="John S. Urban" >
     <link rel="icon" href="../favicon.png">
 
-    <title>demo_sha256 &ndash; hashkeys</title>
+    <title>setup &ndash; hashkeys</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -108,8 +108,8 @@
     
   
   <div class="row">
-    <h1>demo_sha256
-    <small>Program</small>
+    <h1>setup
+      <small>Subroutine</small>
     
     </h1>
     
@@ -126,7 +126,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="19.3% of total for programs.">36 statements</a>
+    title="11.1% of total for procedures.">4 statements</a>
      </li> 
      
      
@@ -140,8 +140,10 @@
     
      <li><a href='../sourcefile/digest.f90.html'>digest.f90</a></li>
     
+     <li><a href='../program/demo_sha256.html'>demo_sha256</a></li>
+    
   
-     <li class="active">demo_sha256</li>
+     <li class="active">setup</li>
   </ol>
 </div>
 </div>
@@ -164,26 +166,6 @@
 
 
 
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
-  <div id="vars-0" class="panel-collapse collapse">
-    <div class="list-group">
-      
-      <a class="list-group-item" href="../program/demo_sha256.html#variable-filename">filename</a>
-      
-      <a class="list-group-item" href="../program/demo_sha256.html#variable-help_text~4">help_text</a>
-      
-      <a class="list-group-item" href="../program/demo_sha256.html#variable-i~5">i</a>
-      
-      <a class="list-group-item" href="../program/demo_sha256.html#variable-string~2">string</a>
-      
-      <a class="list-group-item" href="../program/demo_sha256.html#variable-text">text</a>
-      
-      <a class="list-group-item" href="../program/demo_sha256.html#variable-version_text~2">version_text</a>
-      
-    </div>
-  </div>
-</div>
 
 
 
@@ -193,20 +175,6 @@
 
 
 
-
-
-
-
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
-  <div class="list-group">
-    <div id="subs-0" class="panel-collapse collapse">
-      
-      <a class="list-group-item" href="../program/demo_sha256.html#proc-setup~2">setup</a>
-      
-    </div>
-  </div>
-</div>
 
 
 
@@ -219,7 +187,7 @@
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../program/demo_sha256.html#src">demo_sha256</a>
+    <a class="list-group-item" href="../proc/setup~2.html#src">setup</a>
   </div>
 </div>
 
@@ -230,69 +198,76 @@
     </div>
     
     <div class="col-md-9" id='text'>
+    <h2>
+subroutine setup()
+    
+    
+   
+</h2>
     
   
-    <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      
-      <li class="list-group-item">
-  <ul class="list-inline">
-    
-    <li><a href="https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fFORTRAN_005fENV.html">iso_fortran_env</a></li>
-    
-    <li>M_hashkeys</li>
-    
-    <li>M_io</li>
-    
-    <li>M_strings</li>
-    
-    <li>M_system</li>
-    
-    <li>M_CLI2</li>
-    
-  </ul>
-      </li>
-      
-      
-      
-      </ul>
-    </div>
-    
+
 
     
-    
+    <h2 id="name">NAME</h2>
+<div class="codehilite"><pre><span></span><code><span class="n">digest</span><span class="p">(</span><span class="mi">1</span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n">FUNIX</span><span class="o">]</span><span class="w"> </span><span class="k">compute</span><span class="w"> </span><span class="n">SHA256</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="n">digest</span><span class="w"></span>
+<span class="p">(</span><span class="nl">LICENSE</span><span class="p">:</span><span class="n">PD</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="synopsis">SYNOPSIS</h2>
+<div class="codehilite"><pre><span></span><code>digest FILE...
+</code></pre></div>
+
+<h2 id="description">DESCRIPTION</h2>
+<div class="codehilite"><pre><span></span><code><span class="n">digest</span><span class="p">(</span><span class="mf">1f</span><span class="p">)</span> <span class="n">prints</span> <span class="n">SHA256</span> <span class="p">(</span><span class="mh">256</span><span class="o">-</span><span class="kt">bit</span><span class="p">)</span> <span class="n">checksums</span><span class="p">.</span> <span class="n">The</span> <span class="n">sums</span> <span class="n">are</span> <span class="n">computed</span> <span class="n">as</span>
+<span class="n">described</span> <span class="n">in</span> <span class="n">FIPS</span><span class="o">-</span><span class="mh">180</span><span class="o">-</span><span class="mf">2.</span> <span class="n">For</span> <span class="n">each</span> <span class="n">regular</span> <span class="n">file</span> <span class="n">listed</span> <span class="n">on</span> <span class="n">the</span> <span class="n">command</span>
+<span class="n">line</span> <span class="n">a</span> <span class="n">line</span> <span class="n">is</span> <span class="n">printed</span> <span class="n">with</span> <span class="n">the</span> <span class="n">checksum</span><span class="p">,</span> <span class="n">a</span> <span class="kt">byte</span> <span class="n">count</span> <span class="k">and</span> <span class="n">the</span> <span class="n">name</span>
+<span class="n">of</span> <span class="n">the</span> <span class="n">file</span><span class="p">.</span>
+
+<span class="n">It</span> <span class="n">exercises</span> <span class="n">the</span> <span class="n">sha256</span><span class="p">(</span><span class="mf">3f</span><span class="p">)</span> <span class="n">routine</span><span class="p">.</span> <span class="n">Note</span> <span class="n">that</span> <span class="n">it</span> <span class="n">reads</span> <span class="n">the</span> <span class="n">files</span>
+<span class="n">one</span> <span class="n">at</span> <span class="n">a</span> <span class="kt">time</span> <span class="n">into</span> <span class="n">dynamically</span> <span class="n">allocated</span> <span class="n">memory</span><span class="p">.</span>
+</code></pre></div>
+
+<h2 id="options">OPTIONS</h2>
+<div class="codehilite"><pre><span></span><code> --auto_test,a    run internal tests of routines in M_sha3(3fm) module
+</code></pre></div>
+
+<h2 id="examples">EXAMPLES</h2>
+<div class="codehilite"><pre><span></span><code>Sample commands
+
+ digest  *
+  FF1A6FB532 .... 22C3D6208360FF     1049831 c1-1-tirupathi.pdf
+  F61B2FF27B .... C3AB2CA72CA95B      109119 in-1
+  B019112253 .... 30B239057202EA        4591 newbugs.f90
+  52E4A0D9AE .... 4F299EDBC3C8C9        4505 record.sh
+</code></pre></div>
+
+<h2 id="author">AUTHOR</h2>
+<div class="codehilite"><pre><span></span><code>John S. Urban
+</code></pre></div>
+
+<h2 id="license">LICENSE</h2>
+<p>Public Domain</p>
     
 
-     <section class="visible-xs visible-sm hidden-md">
-       
+    <h3>Arguments</h3>
+    
+    <em>None</em>
+    <br>
+    
+    
+    
+    
+     
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
 <h3>Contents</h3>
  
 
 
 
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
-  <div id="vars-1" class="panel-collapse collapse">
-    <div class="list-group">
-      
-      <a class="list-group-item" href="../program/demo_sha256.html#variable-filename">filename</a>
-      
-      <a class="list-group-item" href="../program/demo_sha256.html#variable-help_text~4">help_text</a>
-      
-      <a class="list-group-item" href="../program/demo_sha256.html#variable-i~5">i</a>
-      
-      <a class="list-group-item" href="../program/demo_sha256.html#variable-string~2">string</a>
-      
-      <a class="list-group-item" href="../program/demo_sha256.html#variable-text">text</a>
-      
-      <a class="list-group-item" href="../program/demo_sha256.html#variable-version_text~2">version_text</a>
-      
-    </div>
-  </div>
-</div>
 
 
 
@@ -302,20 +277,6 @@
 
 
 
-
-
-
-
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
-  <div class="list-group">
-    <div id="subs-1" class="panel-collapse collapse">
-      
-      <a class="list-group-item" href="../program/demo_sha256.html#proc-setup~2">setup</a>
-      
-    </div>
-  </div>
-</div>
 
 
 
@@ -328,121 +289,17 @@
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../program/demo_sha256.html#src">demo_sha256</a>
+    <a class="list-group-item" href="../proc/setup~2.html#src">setup</a>
   </div>
 </div>
 
 
 
-     </section>
-     <br class="visible-xs visible-sm hidden-md">
-
-     
-
-    
-    <section>
-    <h2>Variables</h2>
-    
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-
-<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-filename"></span>character(len=:),</td>
-  
-  
-  <td>allocatable</td><td>::</td>
-  <td><strong>filename</strong></td><td></td><td></td><td></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-help_text~4"></span>character(len=:),</td>
-  
-  
-  <td>allocatable</td><td>::</td>
-  <td><strong>help_text</strong>(:)</td><td></td><td></td><td></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-i~5"></span>integer</td>
-  
-  
-  <td></td><td>::</td>
-  <td><strong>i</strong></td><td> =</td><td>0</td><td></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-string~2"></span>character(len=:),</td>
-  
-  
-  <td>allocatable</td><td>::</td>
-  <td><strong>string</strong></td><td></td><td></td><td></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-text"></span>character(len=1),</td>
-  
-  
-  <td>allocatable</td><td>::</td>
-  <td><strong>text</strong>(:)</td><td></td><td></td><td></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-version_text~2"></span>character(len=:),</td>
-  
-  
-  <td>allocatable</td><td>::</td>
-  <td><strong>version_text</strong>(:)</td><td></td><td></td><td></td>
-  
-</tr>
-
-</tbody>
-</table>
-
     </section>
-    <br>
+    <br class="visible-xs visible-sm hidden-md">
+
     
-    
+
     
     
     
@@ -452,83 +309,16 @@
     
     
     
-
-
-    
-    <section>
-    <h2>Subroutines</h2>
-    
-    
-  <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-setup~2"></span><h3>
-subroutine <a href='../proc/setup~2.html'>setup</a>()
-    
-    
-   
-</h3></div>
-  <div class="panel-body">
-       
-    
-
-
-
-
-
-
-
-<p>Public Domain</p><a href="../proc/setup~2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
-    <h4>Arguments</h4>
-    
-      <em>None</em>
     
     
 
-  </div>
-  </div>
 
-    
-    </section>    
     
     
     
     <section>
-    <h2 id="src">Source Code</h2>
-    <div class="highlight"><pre><span></span><span class="k">program </span><span class="n">demo_sha256</span>
-
-<span class="c">! ident_1=&quot;@(#)sha256(1f): read file into memory and generate SHA-256 digest value&quot;</span>
-
-<span class="k">use</span><span class="p">,</span><span class="k">intrinsic</span> <span class="kd">::</span> <span class="n">iso_fortran_env</span><span class="p">,</span> <span class="k">only</span> <span class="p">:</span> <span class="n">ERROR_UNIT</span>
-<span class="k">use </span><span class="n">M_hashkeys</span><span class="p">,</span>                   <span class="k">only</span> <span class="p">:</span> <span class="n">sha256</span><span class="p">,</span> <span class="n">test_suite_sha256</span>
-<span class="k">use </span><span class="n">M_io</span><span class="p">,</span>                         <span class="k">only</span> <span class="p">:</span> <span class="n">slurp</span>
-<span class="k">use </span><span class="n">M_strings</span><span class="p">,</span>                    <span class="k">only</span> <span class="p">:</span> <span class="n">switch</span>
-<span class="k">use </span><span class="n">M_system</span><span class="p">,</span>                     <span class="k">only</span> <span class="p">:</span> <span class="n">system_isreg</span>
-<span class="k">use </span><span class="n">M_CLI2</span><span class="p">,</span>                       <span class="k">only</span> <span class="p">:</span> <span class="n">set_args</span><span class="p">,</span> <span class="n">lget</span><span class="p">,</span> <span class="n">files</span><span class="o">=&gt;</span><span class="n">unnamed</span>
-<span class="k">implicit none</span>
-<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="k">allocatable</span> <span class="kd">::</span> <span class="n">text</span><span class="p">(:)</span>                      <span class="c">! array to hold file in memory</span>
-<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span> <span class="kd">::</span> <span class="n">help_text</span><span class="p">(:),</span><span class="n">version_text</span><span class="p">(:)</span>
-<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span> <span class="kd">::</span> <span class="n">string</span>
-<span class="kt">integer</span>                      <span class="kd">::</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
-<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span> <span class="kd">::</span> <span class="n">filename</span>
-   <span class="k">call </span><span class="n">setup</span><span class="p">()</span>
-   <span class="k">call </span><span class="n">set_args</span><span class="p">(</span><span class="s1">&#39; --auto_test:a F&#39;</span><span class="p">,</span><span class="n">help_text</span><span class="p">,</span><span class="n">version_text</span><span class="p">)</span>
-   <span class="k">if</span> <span class="p">(</span><span class="n">lget</span><span class="p">(</span><span class="s1">&#39;auto_test&#39;</span><span class="p">))</span><span class="k">then</span>
-<span class="k">      call </span><span class="n">test_suite_sha256</span><span class="p">()</span>
-   <span class="k">endif</span>
-<span class="k">   do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>                                        <span class="c">! step through filenames on command line</span>
-      <span class="n">filename</span><span class="o">=</span><span class="n">files</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-      <span class="k">if</span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="n">system_isreg</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span><span class="k">cycle</span>                   <span class="c">! ignore anything except regular files</span>
-      <span class="k">call </span><span class="n">slurp</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">text</span><span class="p">)</span>                              <span class="c">! allocate character array and copy file into it</span>
-      <span class="k">if</span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="nb">allocated</span><span class="p">(</span><span class="n">text</span><span class="p">))</span><span class="k">then</span>
-<span class="k">         write</span><span class="p">(</span><span class="n">ERROR_UNIT</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;*sha256* ERROR: failed to load file &#39;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-      <span class="k">else</span>
-<span class="k">         </span><span class="n">string</span><span class="o">=</span><span class="n">switch</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>                                 <span class="c">! switch array to a single character variable</span>
-         <span class="k">deallocate</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>                                    <span class="c">! release memory</span>
-         <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="n">sha256</span><span class="p">(</span><span class="n">string</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">),</span><span class="nb">trim</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="c">! write digest value</span>
-      <span class="k">endif</span>
-<span class="k">   enddo</span>
-<span class="k">contains</span>
-<span class="k">subroutine </span><span class="n">setup</span><span class="p">()</span>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="k">subroutine </span><span class="n">setup</span><span class="p">()</span>
 <span class="n">help_text</span><span class="o">=</span><span class="p">[</span> <span class="kt">CHARACTER</span><span class="p">(</span><span class="nb">LEN</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span> <span class="kd">::</span> <span class="p">&amp;</span>
 <span class="s1">&#39;NAME&#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;   digest(1f) - [FUNIX] compute SHA256 message digest&#39;</span><span class="p">,&amp;</span>
@@ -608,16 +398,16 @@ subroutine <a href='../proc/setup~2.html'>setup</a>()
 <span class="s1">&#39;@(#)AUTHOR:         John S. Urban&gt;&#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;&#39;</span><span class="p">]</span>
 <span class="k">end subroutine </span><span class="n">setup</span>
-<span class="k">end program </span><span class="n">demo_sha256</span>
 </pre></div>
 
     </section>
+    <br>
     
     
     </div>
   </div>
 
-  
+
     <hr>    
     </div> <!-- /container -->
     <footer>
