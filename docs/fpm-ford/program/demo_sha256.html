@@ -126,7 +126,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="14.2% of total for programs.">25 statements</a>
+    title="19.3% of total for programs.">36 statements</a>
      </li> 
      
      
@@ -171,11 +171,15 @@
       
       <a class="list-group-item" href="../program/demo_sha256.html#variable-filename">filename</a>
       
+      <a class="list-group-item" href="../program/demo_sha256.html#variable-help_text~4">help_text</a>
+      
       <a class="list-group-item" href="../program/demo_sha256.html#variable-i~5">i</a>
       
       <a class="list-group-item" href="../program/demo_sha256.html#variable-string~2">string</a>
       
       <a class="list-group-item" href="../program/demo_sha256.html#variable-text">text</a>
+      
+      <a class="list-group-item" href="../program/demo_sha256.html#variable-version_text~2">version_text</a>
       
     </div>
   </div>
@@ -191,6 +195,18 @@
 
 
 
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-0" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../program/demo_sha256.html#proc-setup~2">setup</a>
+      
+    </div>
+  </div>
+</div>
 
 
 
@@ -235,6 +251,8 @@
     
     <li>M_system</li>
     
+    <li>M_CLI2</li>
+    
   </ul>
       </li>
       
@@ -244,43 +262,9 @@
     </div>
     
 
-    <h2 id="name">NAME</h2>
-<div class="codehilite"><pre><span></span><code><span class="n">digest</span><span class="p">(</span><span class="mi">1</span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n">FUNIX</span><span class="o">]</span><span class="w"> </span><span class="k">compute</span><span class="w"> </span><span class="n">SHA256</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="n">digest</span><span class="w"></span>
-<span class="p">(</span><span class="nl">LICENSE</span><span class="p">:</span><span class="n">PD</span><span class="p">)</span><span class="w"></span>
-</code></pre></div>
-
-<h2 id="synopsis">SYNOPSIS</h2>
-<div class="codehilite"><pre><span></span><code>digest FILE...
-</code></pre></div>
-
-<h2 id="description">DESCRIPTION</h2>
-<div class="codehilite"><pre><span></span><code><span class="n">digest</span><span class="p">(</span><span class="mf">1f</span><span class="p">)</span> <span class="n">prints</span> <span class="n">SHA256</span> <span class="p">(</span><span class="mh">256</span><span class="o">-</span><span class="kt">bit</span><span class="p">)</span> <span class="n">checksums</span><span class="p">.</span> <span class="n">The</span> <span class="n">sums</span> <span class="n">are</span> <span class="n">computed</span>
-<span class="n">as</span> <span class="n">described</span> <span class="n">in</span> <span class="n">FIPS</span><span class="o">-</span><span class="mh">180</span><span class="o">-</span><span class="mf">2.</span> <span class="n">For</span> <span class="n">each</span> <span class="n">regular</span> <span class="n">file</span> <span class="n">listed</span> <span class="n">on</span> <span class="n">the</span>
-<span class="n">command</span> <span class="n">line</span> <span class="n">a</span> <span class="n">line</span> <span class="n">is</span> <span class="n">printed</span> <span class="n">with</span> <span class="n">the</span> <span class="n">checksum</span><span class="p">,</span> <span class="n">a</span> <span class="kt">byte</span> <span class="n">count</span> <span class="k">and</span>
-<span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">file</span><span class="p">.</span>
-
-<span class="n">It</span> <span class="n">exercises</span> <span class="n">the</span> <span class="n">sha256</span><span class="p">(</span><span class="mf">3f</span><span class="p">)</span> <span class="n">routine</span><span class="p">.</span> <span class="n">Note</span> <span class="n">that</span> <span class="n">it</span> <span class="n">reads</span> <span class="n">the</span> <span class="n">files</span>
-<span class="n">one</span> <span class="n">at</span> <span class="n">a</span> <span class="kt">time</span> <span class="n">into</span> <span class="n">dynamically</span> <span class="n">allocated</span> <span class="n">memory</span><span class="p">.</span>
-</code></pre></div>
-
-<h2 id="examples">EXAMPLES</h2>
-<div class="codehilite"><pre><span></span><code>Sample commands
-
- digest  *
-  FF1A6FB5327CBCEB6E32BCAB543FA71C3033C196EB84E122722C3FD6208360FF     1049831 c1-1-tirupathi.pdf
-  F61B2FF27B5268B9FB6DAD7BBA76D1072D046349D7E767BEEFC3AB2CA72CA95B      109119 in-1
-  B01911225398AC1371DF8F1D72CBE8AA2E677EDD855E830B2E073439057202EA        4591 newbugs.f90
-  52E4A0D9ACDD801D62AD497D57B143E5A2E0A56EAD0EA587D14F299EDBC3C8C9        4505 record.sh
-</code></pre></div>
-
-<h2 id="author">AUTHOR</h2>
-<div class="codehilite"><pre><span></span><code>John S. Urban
-</code></pre></div>
-
-<h2 id="license">LICENSE</h2>
-<p>Public Domain</p>
     
-    <br>
+    
+    
 
      <section class="visible-xs visible-sm hidden-md">
        
@@ -296,11 +280,15 @@
       
       <a class="list-group-item" href="../program/demo_sha256.html#variable-filename">filename</a>
       
+      <a class="list-group-item" href="../program/demo_sha256.html#variable-help_text~4">help_text</a>
+      
       <a class="list-group-item" href="../program/demo_sha256.html#variable-i~5">i</a>
       
       <a class="list-group-item" href="../program/demo_sha256.html#variable-string~2">string</a>
       
       <a class="list-group-item" href="../program/demo_sha256.html#variable-text">text</a>
+      
+      <a class="list-group-item" href="../program/demo_sha256.html#variable-version_text~2">version_text</a>
       
     </div>
   </div>
@@ -316,6 +304,18 @@
 
 
 
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-1" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../program/demo_sha256.html#proc-setup~2">setup</a>
+      
+    </div>
+  </div>
+</div>
 
 
 
@@ -358,11 +358,25 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-filename"></span>character(len=4096)</td>
+  <td><span class="anchor" id="variable-filename"></span>character(len=:),</td>
   
   
-  <td></td><td>::</td>
+  <td>allocatable</td><td>::</td>
   <td><strong>filename</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-help_text~4"></span>character(len=:),</td>
+  
+  
+  <td>allocatable</td><td>::</td>
+  <td><strong>help_text</strong>(:)</td><td></td><td></td><td></td>
   
 </tr>
 
@@ -408,6 +422,20 @@
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-version_text~2"></span>character(len=:),</td>
+  
+  
+  <td>allocatable</td><td>::</td>
+  <td><strong>version_text</strong>(:)</td><td></td><td></td><td></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -427,26 +455,68 @@
 
 
     
+    <section>
+    <h2>Subroutines</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-setup~2"></span><h3>
+subroutine <a href='../proc/setup~2.html'>setup</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Public Domain</p><a href="../proc/setup~2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    </section>    
+    
     
     
     <section>
     <h2 id="src">Source Code</h2>
     <div class="highlight"><pre><span></span><span class="k">program </span><span class="n">demo_sha256</span>
+
+<span class="c">! ident_1=&quot;@(#)sha256(1f): read file into memory and generate SHA-256 digest value&quot;</span>
+
 <span class="k">use</span><span class="p">,</span><span class="k">intrinsic</span> <span class="kd">::</span> <span class="n">iso_fortran_env</span><span class="p">,</span> <span class="k">only</span> <span class="p">:</span> <span class="n">ERROR_UNIT</span>
 <span class="k">use </span><span class="n">M_hashkeys</span><span class="p">,</span>                   <span class="k">only</span> <span class="p">:</span> <span class="n">sha256</span><span class="p">,</span> <span class="n">test_suite_sha256</span>
 <span class="k">use </span><span class="n">M_io</span><span class="p">,</span>                         <span class="k">only</span> <span class="p">:</span> <span class="n">slurp</span>
 <span class="k">use </span><span class="n">M_strings</span><span class="p">,</span>                    <span class="k">only</span> <span class="p">:</span> <span class="n">switch</span>
 <span class="k">use </span><span class="n">M_system</span><span class="p">,</span>                     <span class="k">only</span> <span class="p">:</span> <span class="n">system_isreg</span>
+<span class="k">use </span><span class="n">M_CLI2</span><span class="p">,</span>                       <span class="k">only</span> <span class="p">:</span> <span class="n">set_args</span><span class="p">,</span> <span class="n">lget</span><span class="p">,</span> <span class="n">files</span><span class="o">=&gt;</span><span class="n">unnamed</span>
 <span class="k">implicit none</span>
-
-<span class="c">! ident_1=&quot;@(#)sha256(1f): read file into memory and generate SHA-256 digest value&quot;</span>
-
 <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="k">allocatable</span> <span class="kd">::</span> <span class="n">text</span><span class="p">(:)</span>                      <span class="c">! array to hold file in memory</span>
+<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span> <span class="kd">::</span> <span class="n">help_text</span><span class="p">(:),</span><span class="n">version_text</span><span class="p">(:)</span>
 <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span> <span class="kd">::</span> <span class="n">string</span>
 <span class="kt">integer</span>                      <span class="kd">::</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
-<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">4096</span><span class="p">)</span>          <span class="kd">::</span> <span class="n">filename</span>
-   <span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="nb">command_argument_count</span><span class="p">()</span>                           <span class="c">! step through filenames on command line</span>
-      <span class="k">call </span><span class="nb">get_command_argument</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span> <span class="kd">::</span> <span class="n">filename</span>
+   <span class="k">call </span><span class="n">setup</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">set_args</span><span class="p">(</span><span class="s1">&#39; --auto_test:a F&#39;</span><span class="p">,</span><span class="n">help_text</span><span class="p">,</span><span class="n">version_text</span><span class="p">)</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">lget</span><span class="p">(</span><span class="s1">&#39;auto_test&#39;</span><span class="p">))</span><span class="k">then</span>
+<span class="k">      call </span><span class="n">test_suite_sha256</span><span class="p">()</span>
+   <span class="k">endif</span>
+<span class="k">   do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>                                        <span class="c">! step through filenames on command line</span>
+      <span class="n">filename</span><span class="o">=</span><span class="n">files</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
       <span class="k">if</span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="n">system_isreg</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span><span class="k">cycle</span>                   <span class="c">! ignore anything except regular files</span>
       <span class="k">call </span><span class="n">slurp</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">text</span><span class="p">)</span>                              <span class="c">! allocate character array and copy file into it</span>
       <span class="k">if</span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="nb">allocated</span><span class="p">(</span><span class="n">text</span><span class="p">))</span><span class="k">then</span>
@@ -457,7 +527,87 @@
          <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="n">sha256</span><span class="p">(</span><span class="n">string</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">),</span><span class="nb">trim</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="c">! write digest value</span>
       <span class="k">endif</span>
 <span class="k">   enddo</span>
-<span class="k">   if</span><span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="n">le</span><span class="p">.</span><span class="mi">1</span><span class="p">)</span> <span class="k">call </span><span class="n">test_suite_sha256</span><span class="p">()</span>
+<span class="k">contains</span>
+<span class="k">subroutine </span><span class="n">setup</span><span class="p">()</span>
+<span class="n">help_text</span><span class="o">=</span><span class="p">[</span> <span class="kt">CHARACTER</span><span class="p">(</span><span class="nb">LEN</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span> <span class="kd">::</span> <span class="p">&amp;</span>
+<span class="s1">&#39;NAME&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   digest(1f) - [FUNIX] compute SHA256 message digest&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   (LICENSE:PD)&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;SYNOPSIS&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   digest FILE...&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;DESCRIPTION&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   digest(1f) prints SHA256 (256-bit) checksums. The sums are computed as&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   described in FIPS-180-2. For each regular file listed on the command&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   line a line is printed with the checksum, a byte count and the name&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   of the file.&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   It exercises the sha256(3f) routine. Note that it reads the files&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   one at a time into dynamically allocated memory.&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;OPTIONS&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;    --auto_test,a    run internal tests of routines in M_sha3(3fm) module&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;EXAMPLES&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   Sample commands&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;    digest  *&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;     FF1A6FB532 .... 22C3D6208360FF     1049831 c1-1-tirupathi.pdf&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;     F61B2FF27B .... C3AB2CA72CA95B      109119 in-1&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;     B019112253 .... 30B239057202EA        4591 newbugs.f90&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;     52E4A0D9AE .... 4F299EDBC3C8C9        4505 record.sh&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;AUTHOR&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   John S. Urban&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;LICENSE&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;Public Domain&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;&#39;</span><span class="p">]</span>
+<span class="c">!&gt;</span>
+<span class="c">!!##NAME</span>
+<span class="c">!!    digest(1f) - [FUNIX] compute SHA256 message digest</span>
+<span class="c">!!    (LICENSE:PD)</span>
+<span class="c">!!</span>
+<span class="c">!!##SYNOPSIS</span>
+<span class="c">!!</span>
+<span class="c">!!    digest FILE...</span>
+<span class="c">!!</span>
+<span class="c">!!##DESCRIPTION</span>
+<span class="c">!!    digest(1f) prints SHA256 (256-bit) checksums. The sums are computed as</span>
+<span class="c">!!    described in FIPS-180-2. For each regular file listed on the command</span>
+<span class="c">!!    line a line is printed with the checksum, a byte count and the name</span>
+<span class="c">!!    of the file.</span>
+<span class="c">!!</span>
+<span class="c">!!    It exercises the sha256(3f) routine. Note that it reads the files</span>
+<span class="c">!!    one at a time into dynamically allocated memory.</span>
+<span class="c">!!</span>
+<span class="c">!!##OPTIONS</span>
+<span class="c">!!     --auto_test,a    run internal tests of routines in M_sha3(3fm) module</span>
+<span class="c">!!</span>
+<span class="c">!!##EXAMPLES</span>
+<span class="c">!!</span>
+<span class="c">!!    Sample commands</span>
+<span class="c">!!</span>
+<span class="c">!!     digest  *</span>
+<span class="c">!!      FF1A6FB532 .... 22C3D6208360FF     1049831 c1-1-tirupathi.pdf</span>
+<span class="c">!!      F61B2FF27B .... C3AB2CA72CA95B      109119 in-1</span>
+<span class="c">!!      B019112253 .... 30B239057202EA        4591 newbugs.f90</span>
+<span class="c">!!      52E4A0D9AE .... 4F299EDBC3C8C9        4505 record.sh</span>
+<span class="c">!!</span>
+<span class="c">!!##AUTHOR</span>
+<span class="c">!!    John S. Urban</span>
+<span class="c">!!</span>
+<span class="c">!!##LICENSE</span>
+<span class="c">!! Public Domain</span>
+<span class="n">version_text</span><span class="o">=</span><span class="p">[</span> <span class="kt">CHARACTER</span><span class="p">(</span><span class="nb">LEN</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span> <span class="kd">::</span> <span class="p">&amp;</span>
+<span class="s1">&#39;@(#)PRODUCT:        GPF library utilities and examples&gt;&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;@(#)PROGRAM:        digest(1)&gt;&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;@(#)DESCRIPTION:    generate SHA digest values for specified files&gt;&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;@(#)VERSION:        1.0-20220715&gt;&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;@(#)AUTHOR:         John S. Urban&gt;&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;&#39;</span><span class="p">]</span>
+<span class="k">end subroutine </span><span class="n">setup</span>
 <span class="k">end program </span><span class="n">demo_sha256</span>
 </pre></div>
 
@@ -479,7 +629,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2022-07-15 23:18  
+             on 2022-07-16 09:14  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> hashkeys was developed by John S. Urban</p></div>

@@ -131,16 +131,16 @@
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/sha3.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/digest.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/sha3.f90.html'>sha3.f90</a></li>
+     <li><a href='../sourcefile/digest.f90.html'>digest.f90</a></li>
     
-     <li><a href='../program/demo_m_sha3.html'>demo_M_sha3</a></li>
+     <li><a href='../program/demo_sha256.html'>demo_sha256</a></li>
     
   
      <li class="active">setup</li>
@@ -187,7 +187,7 @@
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../proc/setup.html#src">setup</a>
+    <a class="list-group-item" href="../proc/setup~2.html#src">setup</a>
   </div>
 </div>
 
@@ -210,39 +210,44 @@ subroutine setup()
 
     
     <h2 id="name">NAME</h2>
-<div class="codehilite"><pre><span></span><code><span class="nv">sha3</span><span class="ss">(</span><span class="mi">1</span><span class="ss">)</span> <span class="o">-</span> [<span class="nv">FUNIX</span>:<span class="nv">M_strings</span>] <span class="nv">generate</span> <span class="nv">SHA</span><span class="o">-</span>{<span class="mi">224</span>,<span class="mi">256</span>,<span class="mi">384</span>,<span class="mi">512</span>} <span class="nv">digest</span>
-<span class="nv">values</span> <span class="k">for</span> <span class="nv">specified</span> <span class="nv">files</span>
-<span class="ss">(</span><span class="nv">LICENSE</span>:<span class="nv">PD</span><span class="ss">)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">digest</span><span class="p">(</span><span class="mi">1</span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n">FUNIX</span><span class="o">]</span><span class="w"> </span><span class="k">compute</span><span class="w"> </span><span class="n">SHA256</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="n">digest</span><span class="w"></span>
+<span class="p">(</span><span class="nl">LICENSE</span><span class="p">:</span><span class="n">PD</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 
 <h2 id="synopsis">SYNOPSIS</h2>
-<div class="codehilite"><pre><span></span><code>    sha3 [--bits [224|256|384|512] [--auto_test] FILE...
+<div class="codehilite"><pre><span></span><code>digest FILE...
 </code></pre></div>
 
 <h2 id="description">DESCRIPTION</h2>
-<div class="codehilite"><pre><span></span><code><span class="nv">Example</span> <span class="nv">of</span> <span class="nv">using</span> <span class="nv">M_sha3</span><span class="ss">(</span><span class="mi">3</span><span class="nv">fm</span><span class="ss">)</span> <span class="nv">module</span>. <span class="nv">Calculates</span> <span class="nv">SHA</span> <span class="nv">digest</span> <span class="nv">values</span>
-<span class="k">for</span> <span class="nv">specified</span> <span class="nv">files</span>.
+<div class="codehilite"><pre><span></span><code><span class="n">digest</span><span class="p">(</span><span class="mf">1f</span><span class="p">)</span> <span class="n">prints</span> <span class="n">SHA256</span> <span class="p">(</span><span class="mh">256</span><span class="o">-</span><span class="kt">bit</span><span class="p">)</span> <span class="n">checksums</span><span class="p">.</span> <span class="n">The</span> <span class="n">sums</span> <span class="n">are</span> <span class="n">computed</span> <span class="n">as</span>
+<span class="n">described</span> <span class="n">in</span> <span class="n">FIPS</span><span class="o">-</span><span class="mh">180</span><span class="o">-</span><span class="mf">2.</span> <span class="n">For</span> <span class="n">each</span> <span class="n">regular</span> <span class="n">file</span> <span class="n">listed</span> <span class="n">on</span> <span class="n">the</span> <span class="n">command</span>
+<span class="n">line</span> <span class="n">a</span> <span class="n">line</span> <span class="n">is</span> <span class="n">printed</span> <span class="n">with</span> <span class="n">the</span> <span class="n">checksum</span><span class="p">,</span> <span class="n">a</span> <span class="kt">byte</span> <span class="n">count</span> <span class="k">and</span> <span class="n">the</span> <span class="n">name</span>
+<span class="n">of</span> <span class="n">the</span> <span class="n">file</span><span class="p">.</span>
 
-<span class="nv">NOT</span> <span class="nv">CURRENTLY</span> <span class="nv">WORKING</span>
+<span class="n">It</span> <span class="n">exercises</span> <span class="n">the</span> <span class="n">sha256</span><span class="p">(</span><span class="mf">3f</span><span class="p">)</span> <span class="n">routine</span><span class="p">.</span> <span class="n">Note</span> <span class="n">that</span> <span class="n">it</span> <span class="n">reads</span> <span class="n">the</span> <span class="n">files</span>
+<span class="n">one</span> <span class="n">at</span> <span class="n">a</span> <span class="kt">time</span> <span class="n">into</span> <span class="n">dynamically</span> <span class="n">allocated</span> <span class="n">memory</span><span class="p">.</span>
 </code></pre></div>
 
 <h2 id="options">OPTIONS</h2>
-<p>&ndash;bits,b  NNN where NNN is the digest value size in bits.</p>
-<div class="codehilite"><pre><span></span><code>          <span class="o">+</span><span class="mi">224</span>   <span class="nv">calculate</span> <span class="nv">SHA</span><span class="o">-</span><span class="mi">224</span> <span class="nv">digest</span> <span class="nv">values</span> <span class="k">for</span> <span class="nv">specified</span> <span class="nv">files</span>
-          <span class="o">+</span><span class="mi">256</span>   <span class="nv">calculate</span> <span class="nv">SHA</span><span class="o">-</span><span class="mi">256</span> <span class="nv">digest</span> <span class="nv">values</span> <span class="k">for</span> <span class="nv">specified</span> <span class="nv">files</span>
-                 <span class="ss">(</span><span class="nv">default</span><span class="ss">)</span>
-          <span class="o">+</span><span class="mi">384</span>   <span class="nv">calculate</span> <span class="nv">SHA</span><span class="o">-</span><span class="mi">384</span> <span class="nv">digest</span> <span class="nv">values</span> <span class="k">for</span> <span class="nv">specified</span> <span class="nv">files</span>
-          <span class="o">+</span><span class="mi">512</span>   <span class="nv">calculate</span> <span class="nv">SHA</span><span class="o">-</span><span class="mi">512</span> <span class="nv">digest</span> <span class="nv">values</span> <span class="k">for</span> <span class="nv">specified</span> <span class="nv">files</span>
-</code></pre></div>
-
-<p>&ndash;auto_test,a      run internal tests of routines in M_sha3(3fm) module</p>
-<div class="codehilite"><pre><span></span><code><span class="nv">FILE</span><span class="ss">(</span><span class="nv">S</span><span class="ss">)</span>          <span class="nv">names</span> <span class="nv">of</span> <span class="nv">files</span> <span class="nv">to</span> <span class="nv">generate</span> <span class="nv">a</span> <span class="nv">hash</span> <span class="k">for</span>.
+<div class="codehilite"><pre><span></span><code> --auto_test,a    run internal tests of routines in M_sha3(3fm) module
 </code></pre></div>
 
 <h2 id="examples">EXAMPLES</h2>
-<p>Sample usage
-      sha3 *
-      sha3 &ndash;bits 512 *</p>
+<div class="codehilite"><pre><span></span><code>Sample commands
+
+ digest  *
+  FF1A6FB532 .... 22C3D6208360FF     1049831 c1-1-tirupathi.pdf
+  F61B2FF27B .... C3AB2CA72CA95B      109119 in-1
+  B019112253 .... 30B239057202EA        4591 newbugs.f90
+  52E4A0D9AE .... 4F299EDBC3C8C9        4505 record.sh
+</code></pre></div>
+
+<h2 id="author">AUTHOR</h2>
+<div class="codehilite"><pre><span></span><code>John S. Urban
+</code></pre></div>
+
+<h2 id="license">LICENSE</h2>
+<p>Public Domain</p>
     
 
     <h3>Arguments</h3>
@@ -284,7 +289,7 @@ subroutine setup()
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../proc/setup.html#src">setup</a>
+    <a class="list-group-item" href="../proc/setup~2.html#src">setup</a>
   </div>
 </div>
 
@@ -316,75 +321,78 @@ subroutine setup()
     <div class="highlight"><pre><span></span><span class="k">subroutine </span><span class="n">setup</span><span class="p">()</span>
 <span class="n">help_text</span><span class="o">=</span><span class="p">[</span> <span class="kt">CHARACTER</span><span class="p">(</span><span class="nb">LEN</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span> <span class="kd">::</span> <span class="p">&amp;</span>
 <span class="s1">&#39;NAME&#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;   sha3(1) - [FUNIX:M_strings] generate SHA-{224,256,384,512} digest&#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;   values for specified files&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   digest(1f) - [FUNIX] compute SHA256 message digest&#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;   (LICENSE:PD)&#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;&#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;SYNOPSIS&#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;       sha3 [--bits [224|256|384|512] [--auto_test] FILE...&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   digest FILE...&#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;&#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;DESCRIPTION&#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;   Example of using M_sha3(3fm) module. Calculates SHA digest values&#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;   for specified files.&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   digest(1f) prints SHA256 (256-bit) checksums. The sums are computed as&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   described in FIPS-180-2. For each regular file listed on the command&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   line a line is printed with the checksum, a byte count and the name&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   of the file.&#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;&#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;   NOT CURRENTLY WORKING&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   It exercises the sha256(3f) routine. Note that it reads the files&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   one at a time into dynamically allocated memory.&#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;&#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;OPTIONS&#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39; --bits,b  NNN where NNN is the digest value size in bits.&#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;&#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;             +224   calculate SHA-224 digest values for specified files&#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;             +256   calculate SHA-256 digest values for specified files&#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;                    (default)&#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;             +384   calculate SHA-384 digest values for specified files&#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;             +512   calculate SHA-512 digest values for specified files&#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;&#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39; --auto_test,a      run internal tests of routines in M_sha3(3fm) module&#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;&#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;   FILE(S)          names of files to generate a hash for.&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;    --auto_test,a    run internal tests of routines in M_sha3(3fm) module&#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;&#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;EXAMPLES&#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;  Sample usage&#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;     sha3 *&#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;     sha3 --bits 512 *&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   Sample commands&#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;    digest  *&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;     FF1A6FB532 .... 22C3D6208360FF     1049831 c1-1-tirupathi.pdf&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;     F61B2FF27B .... C3AB2CA72CA95B      109119 in-1&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;     B019112253 .... 30B239057202EA        4591 newbugs.f90&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;     52E4A0D9AE .... 4F299EDBC3C8C9        4505 record.sh&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;AUTHOR&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;   John S. Urban&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;LICENSE&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;Public Domain&#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;&#39;</span><span class="p">]</span>
 <span class="c">!&gt;</span>
 <span class="c">!!##NAME</span>
-<span class="c">!!    sha3(1) - [FUNIX:M_strings] generate SHA-{224,256,384,512} digest</span>
-<span class="c">!!    values for specified files</span>
+<span class="c">!!    digest(1f) - [FUNIX] compute SHA256 message digest</span>
 <span class="c">!!    (LICENSE:PD)</span>
 <span class="c">!!</span>
 <span class="c">!!##SYNOPSIS</span>
 <span class="c">!!</span>
-<span class="c">!!        sha3 [--bits [224|256|384|512] [--auto_test] FILE...</span>
+<span class="c">!!    digest FILE...</span>
 <span class="c">!!</span>
 <span class="c">!!##DESCRIPTION</span>
-<span class="c">!!    Example of using M_sha3(3fm) module. Calculates SHA digest values</span>
-<span class="c">!!    for specified files.</span>
+<span class="c">!!    digest(1f) prints SHA256 (256-bit) checksums. The sums are computed as</span>
+<span class="c">!!    described in FIPS-180-2. For each regular file listed on the command</span>
+<span class="c">!!    line a line is printed with the checksum, a byte count and the name</span>
+<span class="c">!!    of the file.</span>
 <span class="c">!!</span>
-<span class="c">!!    NOT CURRENTLY WORKING</span>
+<span class="c">!!    It exercises the sha256(3f) routine. Note that it reads the files</span>
+<span class="c">!!    one at a time into dynamically allocated memory.</span>
 <span class="c">!!</span>
 <span class="c">!!##OPTIONS</span>
-<span class="c">!!  --bits,b  NNN where NNN is the digest value size in bits.</span>
-<span class="c">!!</span>
-<span class="c">!!              +224   calculate SHA-224 digest values for specified files</span>
-<span class="c">!!              +256   calculate SHA-256 digest values for specified files</span>
-<span class="c">!!                     (default)</span>
-<span class="c">!!              +384   calculate SHA-384 digest values for specified files</span>
-<span class="c">!!              +512   calculate SHA-512 digest values for specified files</span>
-<span class="c">!!</span>
-<span class="c">!!  --auto_test,a      run internal tests of routines in M_sha3(3fm) module</span>
-<span class="c">!!</span>
-<span class="c">!!    FILE(S)          names of files to generate a hash for.</span>
+<span class="c">!!     --auto_test,a    run internal tests of routines in M_sha3(3fm) module</span>
 <span class="c">!!</span>
 <span class="c">!!##EXAMPLES</span>
 <span class="c">!!</span>
-<span class="c">!!   Sample usage</span>
-<span class="c">!!      sha3 *</span>
-<span class="c">!!      sha3 --bits 512 *</span>
+<span class="c">!!    Sample commands</span>
+<span class="c">!!</span>
+<span class="c">!!     digest  *</span>
+<span class="c">!!      FF1A6FB532 .... 22C3D6208360FF     1049831 c1-1-tirupathi.pdf</span>
+<span class="c">!!      F61B2FF27B .... C3AB2CA72CA95B      109119 in-1</span>
+<span class="c">!!      B019112253 .... 30B239057202EA        4591 newbugs.f90</span>
+<span class="c">!!      52E4A0D9AE .... 4F299EDBC3C8C9        4505 record.sh</span>
+<span class="c">!!</span>
+<span class="c">!!##AUTHOR</span>
+<span class="c">!!    John S. Urban</span>
+<span class="c">!!</span>
+<span class="c">!!##LICENSE</span>
+<span class="c">!! Public Domain</span>
 <span class="n">version_text</span><span class="o">=</span><span class="p">[</span> <span class="kt">CHARACTER</span><span class="p">(</span><span class="nb">LEN</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span> <span class="kd">::</span> <span class="p">&amp;</span>
 <span class="s1">&#39;@(#)PRODUCT:        GPF library utilities and examples&gt;&#39;</span><span class="p">,&amp;</span>
-<span class="s1">&#39;@(#)PROGRAM:        sha3(1)&gt;&#39;</span><span class="p">,&amp;</span>
+<span class="s1">&#39;@(#)PROGRAM:        digest(1)&gt;&#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;@(#)DESCRIPTION:    generate SHA digest values for specified files&gt;&#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;@(#)VERSION:        1.0-20220715&gt;&#39;</span><span class="p">,&amp;</span>
 <span class="s1">&#39;@(#)AUTHOR:         John S. Urban&gt;&#39;</span><span class="p">,&amp;</span>
